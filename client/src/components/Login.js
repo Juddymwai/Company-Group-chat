@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+
 function Login(){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -15,6 +16,7 @@ function Login(){
                     onChange= {(e) => setUsername(e.target.value)}
                     placeholder="Username"
                 />
+                <br/>
                 <input
                     type="text"
                     value={password}
