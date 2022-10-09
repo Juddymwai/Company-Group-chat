@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 
-function SignUp(){
+function SignUp({setUser}){
 
     const [username, setUsername]= useState('');
     const [password, setPassword]= useState('');
     const [confirmPassword, setConfirmPassword]= useState('');
 
-    function handleSubmit(){
+    function handleSubmit(e){
         e.preventDefault();
-        fetch('/login',{
-            method: "POST", 
+        fetch('/signup',{
+        method: "POST", 
         headers: {"Content-Type":"application/json"
 
         }, 
@@ -25,9 +25,9 @@ function SignUp(){
         });
     }
 
-    return
+    return (
     <div>
-        <form>
+        <form onSubmit={handleSubmit}>
 
             <h1>SignUp</h1>
 
@@ -60,9 +60,11 @@ function SignUp(){
                 placeholder="Confirm Password"
 
             />
+            <br/>
+            <button>Sign Up</button>
             </form>
 
-        </div>
+        </div>)
 }
 
 export default SignUp;

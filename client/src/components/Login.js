@@ -47,6 +47,8 @@ function Login({setUser}){
                     placeholder="Password"
 
                 />
+                <br/>
+                <button>Login</button>
             </form>
         </div>
     )

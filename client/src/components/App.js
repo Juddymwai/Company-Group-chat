@@ -1,10 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
-
-
-
 import React,{ useState,useEffect} from "react";
 import Login from "./Login";
+import SignUp from "./SignUp";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -20,6 +18,7 @@ function App() {
     <div>
       <h1>hello</h1>
       <Login setUser={setUser}/>
+      <SignUp setUser={setUser}/>
     </div>
     
   );
