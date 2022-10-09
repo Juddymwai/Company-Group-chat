@@ -1,11 +1,19 @@
 import React from "react"
 
-function NavBar(){
+function NavBar({user, setUser}){
+    function handleLogout(){
+        fetch('/logout',{method: "DELETE"})
+        .then((resp)=> {
+            if (resp.ok){
+                setUser(null);
+            }
+        })
+    }
 
 
     return(
         <div>
-            
+
         </div>
     )
 }
