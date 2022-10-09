@@ -1,31 +1,35 @@
 import React, {useState} from "react";
 
 
-function Login(){
+function Login({setUser}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    // const [user, setUser] = useState("")
 
     function handleSubmit(e){
         e.preventDefault();
         fetch('/login',{
             method: "POST", 
         headers: {"Content-Type":"application/json"
-    }, 
+
+        }, 
+
         body: JSON.stringify({username, password}),
-    }).then((r)=>{
+
+        }).then((r)=>{
             if (r.ok){ 
 
-                r.json().then((user) => setUsername(user));
-        }
-    });
+                r.json().then((user) => setUser(user));
+
+            }
+        });
     }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <input
-
                     type="text"
                     value={username}
                     id= "username"
@@ -44,7 +48,6 @@ function Login(){
             </form>
         </div>
     )
-    
 
 }
 export default Login
