@@ -33,14 +33,16 @@ function Login({setUser}){
                     type="text"
                     value={username}
                     id= "username"
+                    autoComplete="off"
                     onChange= {(e) => setUsername(e.target.value)}
                     placeholder="Username"
                 />
                 <br/>
                 <input
-                    type="text"
+                    type="password"
                     value={password}
                     id= "password"
+                    autoComplete="off"
                     onChange= {(e) => setPassword(e.target.value)}
                     placeholder="Password"
 

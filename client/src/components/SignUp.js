@@ -14,7 +14,7 @@ function SignUp(){
 
         }, 
 
-        body: JSON.stringify({username, password}),
+        body: JSON.stringify({username, password, confirmPassword}),
 
         }).then((r)=>{
             if (r.ok){ 
@@ -26,6 +26,43 @@ function SignUp(){
     }
 
     return
+    <div>
+        <form>
+
+            <h1>SignUp</h1>
+
+
+            <input
+                type="text"
+                value={username}
+                id= "username"
+                autoComplete="off"
+                onChange= {(e) => setUsername(e.target.value)}
+                placeholder="Username"
+            />
+            <br/>
+
+            <input
+                type="password"
+                value={password}
+                id= "password"
+                autoComplete="off"
+                onChange= {(e) => setPassword(e.target.value)}
+                placeholder="Password"
+
+            />
+            <br/>
+            <input
+                type="password"
+                value={confirmPassword}
+                id= "confirmPassword"
+                onChange= {(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirm Password"
+
+            />
+            </form>
+
+        </div>
 }
 
 export default SignUp;
