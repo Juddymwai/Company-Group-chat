@@ -1,8 +1,12 @@
 import React from "react"
 
-function Home(){
+function Home({user}){
     if (user){
-        return <h2> Welcome, {user.username}!</h2>;
+        return (
+            <div>
+                <h2> Welcome, {user.username}!</h2>;
+            </div>
+        )
 
     } else {
         return <h2>Kindly Login or Sign Up</h2>
