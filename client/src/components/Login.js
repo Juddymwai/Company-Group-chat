@@ -9,7 +9,7 @@ function Login({setUser}){
     function handleSubmit(e){
         e.preventDefault();
         fetch('/login',{
-            method: "POST", 
+        method: "POST", 
         headers: {"Content-Type":"application/json"
 
         }, 

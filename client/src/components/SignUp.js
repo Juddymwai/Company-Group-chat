@@ -46,7 +46,7 @@ function SignUp({setUser}){
                 type="password"
                 value={password}
                 id= "password"
-                autoComplete="off"
+                autoComplete="current-password"
                 onChange= {(e) => setPassword(e.target.value)}
                 placeholder="Password"
 
@@ -58,7 +58,8 @@ function SignUp({setUser}){
                 id= "confirmPassword"
                 onChange= {(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm Password"
-
+                autoComplete="current-password"
+                
             />
             <br/>
             <button>Sign Up</button>
